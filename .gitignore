@@ -1,0 +1,2 @@
+# Ignore local Excel data files so binary assets are not committed
+*.xlsx
