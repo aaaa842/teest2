@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="data-source" content="data.xlsx" />
+    <meta name="refresh-interval" content="60000" />
+    <title>لوحة متابعة البيانات</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <div>
+          <h1>لوحة متابعة البيانات</h1>
+          <p class="description">
+            تعرض هذه اللوحة محتوى ملف Excel المشار إليه وتقوم بتحديثه تلقائياً.
+          </p>
+        </div>
+        <button class="refresh-button" type="button" data-action="refresh-now">
+          تحديث الآن
+        </button>
+      </header>
+
+      <section class="status-bar">
+        <p class="status-item">
+          آخر تحديث:
+          <time data-role="last-updated" class="status-value">—</time>
+        </p>
+        <p class="status-item error-message" data-role="error" hidden></p>
+      </section>
+
+      <section class="table-wrapper">
+        <table class="data-table" id="data-table">
+          <tbody data-role="data-table-body"></tbody>
+        </table>
+      </section>
+    </main>
+  </body>
+</html>
